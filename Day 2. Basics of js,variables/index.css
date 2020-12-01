@@ -1,0 +1,48 @@
+body{
+    background-color: yellow;
+}
+/*For tag*/
+button{
+    background :yellow !important;
+}
+
+/*for class*/
+.my_button{
+    background-color: red;
+}
+
+/*for id*/
+/*overwrite button and body tab*/
+#my_button1{
+    background: white;
+}
+#my_button2{
+    background: white;
+}
+/*
+Inline css has greter priority than External css
+1. inline css:-----------
+2. external css:-------
+
+For external css:-------
+First priority is id
+second priority is class
+Third priority is specific tag
+Last priority is body tag
+
+
+
+
+To use property of the external css tag anyhow use
+!important at end of property
+*/
+
+/*To set font size of all paragraph tag*/
+p{
+    font-size: 14px;
+}
+
+/*To set font-size of all p tag inside myDiv class*/
+#myDiv p{
+    font-size: 20px;
+}
