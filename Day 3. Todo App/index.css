@@ -1,0 +1,28 @@
+#notes{
+    width:100%;
+}
+
+body{
+    max-width:700px;
+    margin:auto;
+}
+
+
+#note-button{
+    background:white;
+    color:green;
+    font-size 14px;
+    margin-top:5px;
+    padding:5px 10px;
+    float:right;
+    border:1px solid green;
+    border-radius:5px;
+    cursor:pointer;
+
+}
+
+#note-button:hover{
+    background:green;
+    color:#fff;
+    border:1px solid white;
+}
