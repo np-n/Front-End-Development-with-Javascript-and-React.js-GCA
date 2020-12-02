@@ -51,6 +51,8 @@ function onGetSavedNotes(){
     // //This notes is already parsed because we fetched it already
     noteHTML = ''
     JSON.parse(notes).reverse().forEach(function(val,index){
+        // checking if array is empty,or if contains multiple value,avoid this condition
+        if (val){
         // console.log(index)
         // console.log(val)
         noteHTML = noteHTML +
@@ -59,6 +61,7 @@ function onGetSavedNotes(){
                 <small>${getReadableDate(val.date)}</small>
                 <p>${val.value}</p>
                 </div>`
+        }
     })
 
     // When receiving data from a web server, the data is always a string.
@@ -84,7 +87,7 @@ function deleteNotes(index){
     // console.log(index)
     // To delete note from the given index
     myNotes.reverse().splice(index,1)
-    localStorage.setItem(key,JSON.stringify(myNotes))
+    localStorage.setItem(key,JSON.stringify(myNotes.reverse()))
     console.log('Deleted')
     onGetSavedNotes()
 }
