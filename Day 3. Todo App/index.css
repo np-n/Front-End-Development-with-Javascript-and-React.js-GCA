@@ -38,3 +38,17 @@ body{
     margin-bottom: 5px;
     padding 10px;
 }
+
+#myNotes div p{
+    margin-left:15px;
+}
+
+#delete-note{
+    width:4%;
+    float:right;
+    margin:14px;
+}
+
+#delete-note:hover{
+    cursor:pointer;
+}

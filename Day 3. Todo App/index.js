@@ -1,4 +1,4 @@
-
+let months = ['Jan','Feb','April','May','Jun','July','Aug','Sep','Oct','Sep','Nov','Dec']
 
 //  when browser loads HTML completely
 // Do following
@@ -47,11 +47,15 @@ function onAddNotes(){
 function onGetSavedNotes(){
     // To get data from local storage using key
     let notes = localStorage.getItem(key)
+    // //Alternative way of getting notes
+    // //This notes is already parsed because we fetched it already
+    // let notes = myNotes
     // console.log(notes)
     noteHTML = ''
-    JSON.parse(notes).forEach(function(val){
+    JSON.parse(notes).reverse().forEach(function(val){
         noteHTML = noteHTML +
                 `<div>
+                <img id="delete-note" src="delete.png">
                 <p>${getReadableDate(val.date)}</p>
                 <p>${val.value}</p>
                 </div>`
@@ -69,6 +73,8 @@ function onGetSavedNotes(){
 
 function getReadableDate(date){
     let dateReadable = new Date(date)
-    let fullDate = dateReadable.toDateString()
-    return fullDate
+    // let fullDate = dateReadable.toDateString()
+    let fullDate = dateReadable.getDate() +' '+ months[dateReadable.getMonth()]+ ' '+
+            dateReadable.getFullYear()+' '+ dateReadable.getHours()+':'+dateReadable.getMinutes()
+  return fullDate
 }
