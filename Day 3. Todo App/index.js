@@ -49,14 +49,14 @@ function onGetSavedNotes(){
     let notes = localStorage.getItem(key)
     // //Alternative way of getting notes
     // //This notes is already parsed because we fetched it already
-    // let notes = myNotes
-    // console.log(notes)
     noteHTML = ''
-    JSON.parse(notes).reverse().forEach(function(val){
+    JSON.parse(notes).reverse().forEach(function(val,index){
+        // console.log(index)
+        // console.log(val)
         noteHTML = noteHTML +
                 `<div>
-                <img id="delete-note" src="delete.png">
-                <p>${getReadableDate(val.date)}</p>
+                <img  onclick="deleteNotes(${index})" id="delete-note" src="delete.png">
+                <small>${getReadableDate(val.date)}</small>
                 <p>${val.value}</p>
                 </div>`
     })
@@ -78,3 +78,24 @@ function getReadableDate(date){
             dateReadable.getFullYear()+' '+ dateReadable.getHours()+':'+dateReadable.getMinutes()
   return fullDate
 }
+
+
+function deleteNotes(index){
+    // console.log(index)
+    // To delete note from the given index
+    myNotes.reverse().splice(index,1)
+    localStorage.setItem(key,JSON.stringify(myNotes))
+    console.log('Deleted')
+    onGetSavedNotes()
+}
+
+// // Testing
+// function deleteNotes(index){
+// ary = ['npn','neupane','all']
+// ary.splice(index,1)
+// console.log(ary)
+// }
+
+// deleteNotes(0)
+
+
