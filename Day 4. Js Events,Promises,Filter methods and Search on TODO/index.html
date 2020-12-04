@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <form method="POST"
+    onsubmit ="onGetName()">
+        <label for="">Name</label>
+        <input type="text" id="name" onfocus="document.getElementById('name').style.border='2px solid red';" placeholder="onsubmit and onfocus event check!!" >
+        <input type="submit" value="submit">
+    </form>
+
+    <div id="newDiv"
+    onmouseout = "document.getElementById('newDiv').style.background='green'"
+    onmouseover = "document.getElementById('newDiv').style.background='#eeeeff'"
+    >
+    <p>onmouseout and onmouseover event</p>
+    </div>
+    <button id="btn">Event Listner</button>
+    <button onclick="callPromise()">callPromise</button>
+    <button onclick="callPromiseExample_()">callPromise_</button>
+    <button onclick="filterExample()">Filter words</button>
+    <button onclick="filterExample_()">Filter words_</button>
+    <button onclick="filterExample__()">Filter words__</button>
+    
+    <script>
+        /* -------------------------------EventListener------------------------------*/
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click',(event)=>{
+            alert('Wow! Event Triggered')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+#newDiv{
+    margin:30px;
+    height:150px;
+    width:150px;
+    background:green;
+    
+}
+
+#newDiv p{
+    color:white;
+    
+
+}
+#newDiv p:hover{
+    color:green;
+  
+
+}
