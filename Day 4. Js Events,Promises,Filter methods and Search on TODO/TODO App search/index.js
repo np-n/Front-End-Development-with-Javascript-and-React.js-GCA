@@ -55,7 +55,7 @@ function onGetSavedNotes(myNotes){
     let notes = myNotes
     // //This notes is already parsed because we fetched it already
     noteHTML = ''
-    notes.reverse().forEach(function(val,index){
+    notes.forEach(function(val,index){
         // checking if array is empty,or if contains multiple value,avoid this condition
         if (val){
         // console.log(index)
@@ -91,16 +91,18 @@ function getReadableDate(date){
 function deleteNotes(index){
     // console.log(index)
     // To delete note from the given index
-    myNotes.reverse().splice(index,1)
-    localStorage.setItem(key,JSON.stringify(myNotes.reverse()))
+    myNotes.splice(index,1)
+    localStorage.setItem(key,JSON.stringify(myNotes))
     console.log('Deleted')
-    onGetSavedNotes()
+    onGetSavedNotes(myNotes)
 }
 
 // search notes
 function onSearchItems(){
     let searchKey = document.getElementById('searchText').value
-    let newArray = myNotes.filter(note=> note.value.toLowerCase() == searchKey.toLowerCase())
+    // indexOf() returns index of the parameter in the string, and 
+    // returns -1 if parameter doesn't present in the given string
+    let newArray = myNotes.filter(note=> note.value.toLowerCase().indexOf(searchKey.toLowerCase())!= -1)
     onGetSavedNotes(newArray)
 
 

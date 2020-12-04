@@ -19,5 +19,19 @@
 
 <div id="myNotes">
 </div>
+<script>
+    // Add eventlistener to search input box for Enter key
+    let searchNote = document.getElementById('searchText')
+    searchNote.addEventListener('keydown',
+    function(event){
+        if(!event){
+            var event = window.event
+        }
+        if (event.keyCode == 13){
+            onSearchItems()
+        }
+    })
+
+</script>
 </body>
 </html>
