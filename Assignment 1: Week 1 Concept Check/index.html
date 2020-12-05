@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    
+    <div id="container">
+    <h3 id="heading1">Digital clock</h3>
+    <div id="myClock" onload="getReadableTime()"></div>
+</div>
+
+<div id="container">
+    <h3 id="heading2">Tip Calculator</h3>
+    <label for="">Total Amount:</label>
+    <input id="align-1" type="text" placeholder="Amount in Rupees"><br><br>
+    <label for="">Tip %</label>
+    <input id="align-2" type="text" placeholder="Tip Percentage"><br><br>
+    <button id="align-3" onclick="getTotalTip()">Calculate Tip</button>
+    <p id="align-4"></p>
+</div>
+    <script src="index.js"></script>
+    
+</body>
+</html>
