@@ -54,41 +54,42 @@ function onGetSavedNotes(myNotes){
     // //Alternative way of getting notes
     let notes = myNotes
     // //This notes is already parsed because we fetched it already
-    // let noteHTML = ''
-    let main_node = document.getElementById('myNotes')
+    let noteHTML = ''
+    // let main_node = document.getElementById('myNotes')
     notes.forEach(function(val,index){
         // checking if array is empty,or if contains multiple value,avoid this condition
         if (val){
         // console.log(index)
         // console.log(val)p
-
-        let wrapperDiv = document.createElement('div')
-        let dateTag = document.createElement('p')
-        dateTag.innerText = getReadableDate(val.date)
-        wrapperDiv.appendChild(dateTag)
-        let valueTag = document.createElement('p')
-        valueTag.innerText = val.value
-        wrapperDiv.appendChild(valueTag)
-        let deleteDiv = document.createElement('button')
-        deleteDiv.innerText ='Delete'
-        deleteDiv.addEventListener('click',deleteNotes(index))
-        wrapperDiv.appendChild(deleteDiv)
-        main_node.appendChild(wrapperDiv)
+        
+        // creating HTML elements inside js
+        // let wrapperDiv = document.createElement('div')
+        // let dateTag = document.createElement('p')
+        // dateTag.innerText = getReadableDate(val.date)
+        // wrapperDiv.appendChild(dateTag)
+        // let valueTag = document.createElement('p')
+        // valueTag.innerText = val.value
+        // wrapperDiv.appendChild(valueTag)
+        // let deleteDiv = document.createElement('button')
+        // deleteDiv.innerText ='Delete'
+        // deleteDiv.addEventListener('click',deleteNotes(index))
+        // wrapperDiv.appendChild(deleteDiv)
+        // main_node.appendChild(wrapperDiv)
         
 
-        // noteHTML = noteHTML +
-        //         `<div>
-        //         <img  onclick="deleteNotes(${index})" id="delete-note" src="delete.png">
-        //         <small>${getReadableDate(val.date)}</small>
-        //         <p>${val.value}</p>
-        //         </div>`
+        noteHTML = noteHTML +
+                `<div>
+                <img  onclick="deleteNotes(${index})" id="delete-note" src="delete.png">
+                <small>${getReadableDate(val.date)}</small>
+                <p>${val.value}</p>
+                </div>`
         }
     })
 
     // When receiving data from a web server, the data is always a string.
     // Parse the data with JSON.parse(), and the data becomes a JavaScript object.
     // To write notes text to id
-    // document.getElementById('myNotes').innerHTML = noteHTML
+    document.getElementById('myNotes').innerHTML = noteHTML
     // console.log(typeof(notes))
     // console.log(notes)
 
