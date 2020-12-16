@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './App.css'
+import {MyFirstComponent} from './component/firstcomponent'
 
 // class based approach
 export default class App extends Component {
@@ -13,6 +14,7 @@ export default class App extends Component {
         <div>
         <p style ={{fontSize:30}}>I am from Nepal</p>
         </div>
+        <MyFirstComponent/>
       </div>
       </div>
     ) 
