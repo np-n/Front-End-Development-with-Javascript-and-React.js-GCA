@@ -6,16 +6,26 @@ class MyFirstComponent extends Component {
     /* state={
         username:"Netra"
      } */
-
+    // state
     constructor(props){
         super(props)
         this.state = {
-            username:"Netra"
+            username:""
         }
     }
+
+    // to handle change
+    handleChange = (event) => {
+        // to set state
+        this.setState({
+            username:event.target.value
+        })
+    }
+
     render(){
         return(
             <div>
+                <input type="text" onChange={this.handleChange}/><br/>
                 {this.state.username}
             </div>
         )
