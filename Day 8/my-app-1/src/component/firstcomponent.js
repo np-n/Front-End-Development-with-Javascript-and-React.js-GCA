@@ -23,29 +23,17 @@ class MyFirstComponent extends Component {
     handleChange= (event)=>{
         // to set state
         this.setState({
-            username:event.target.value
+            [event.target.name]:event.target.value
         })
     }
 
-    handleChange1= (event)=>{
-        // to set state
-        this.setState({
-            address:event.target.value
-        })
-    }
-    handleChange2= (event)=>{
-        // to set state
-        this.setState({
-            phone:event.target.value
-        })
-    }
 
     render(){
         return(
             <div>
                 <input type="text" onChange={this.handleChange} name="username" />
-                <input type="text" onChange={this.handleChange1} address="address"/>
-                <input type="text" onChange={this.handleChange2} phone ="phone"/><br/>
+                <input type="text" onChange={this.handleChange} name="address"/>
+                <input type="number" onChange={this.handleChange} name ="phone"/><br/>
                 UserName: {this.state.username}<br/>
                 address: {this.state.address}<br/>
                 phone: {this.state.phone}<br/>
