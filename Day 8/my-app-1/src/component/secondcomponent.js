@@ -1,6 +1,4 @@
 import React,{Component} from 'react'
-import  {MyThirdComponent} from './thirdcomponent'
-
 
 class MySecondComponent extends Component {
     render(){
