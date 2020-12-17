@@ -3,8 +3,8 @@ import { MyThirdComponent } from './thirdcomponent'
 
 class MySecondComponent extends Component {
 
-    callFromMyThirdComponent =() =>{
-        alert('Hello')
+    callFromMyThirdComponent =(name) =>{
+        alert('Hello '+ name)
     }
     render(){
         return(
