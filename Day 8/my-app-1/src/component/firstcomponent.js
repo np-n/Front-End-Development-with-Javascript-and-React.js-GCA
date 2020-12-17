@@ -12,12 +12,13 @@ class MyFirstComponent extends Component {
         this.state = {
             username:""
         }
-         // This binding is necessary to make `this` work in the callback
-        this.handleChange = this.handleChange.bind(this)
+        //  // This binding is necessary to make `this` work in the callback
+        // this.handleChange = this.handleChange.bind(this)
     }
 
     // to handle change
-    handleChange(event){
+    // using arrow function to bind this
+    handleChange= (event)=>{
         // to set state
         this.setState({
             username:event.target.value
