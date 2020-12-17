@@ -19,7 +19,7 @@ class MyFirstComponent extends Component {
     }
 
     // to handle change
-    // using arrow function to bind this
+    // using arrow function to bind this keyword
     handleChange= (event)=>{
         // to set state
         this.setState({
@@ -38,7 +38,7 @@ class MyFirstComponent extends Component {
                 address: {this.state.address}<br/>
                 phone: {this.state.phone}<br/>  */}
 
-                {/* sending props i.e state property to MySecondComponent */}
+                {/* sending props i.e state property to MySecondComponent , here Username, Address and Phone are props*/}
                 <MySecondComponent
                 username = {this.state.username}
                 address = {this.state.address}
