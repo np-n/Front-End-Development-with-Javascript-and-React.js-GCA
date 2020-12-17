@@ -34,9 +34,16 @@ class MyFirstComponent extends Component {
                 <input type="text" onChange={this.handleChange} name="username" />
                 <input type="text" onChange={this.handleChange} name="address"/>
                 <input type="number" onChange={this.handleChange} name ="phone"/><br/>
-                UserName: {this.state.username}<br/>
+                {/*  UserName: {this.state.username}<br/>
                 address: {this.state.address}<br/>
-                phone: {this.state.phone}<br/>
+                phone: {this.state.phone}<br/>  */}
+
+                {/* sending props i.e state property to MySecondComponent */}
+                <MySecondComponent
+                username = {this.state.username}
+                address = {this.state.address}
+                phone ={this.state.phone}
+                />
             </div>
         )
     }
