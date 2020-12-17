@@ -9,18 +9,36 @@ class DigitaCalculator extends Component{
       }
 
 // will call when first render is executed
+// note: api call are also done inside this componentDidMount() life cycle
+// this is similar to window.onload() of vanilla js
 componentDidMount(){
     // To use this keyword further inside other function 
     let self = this
     // Call every second
-    this.state.timer = setInterval(function(){
-        // this function has this in scope 
-        // to refer state we use self variable which reference to state
+    this.timer = setInterval(function(){
+        // this function may have this already in it's scope 
+        // to refer this of class scope, we are using self variable where class scope this is assigned
+        // now self reference this scope of state i.e outside function
         self.setState({
+            // at every seconds date is changed
             date:new Date()
         })
 
     },1000)
+
+
+}
+
+// At the end of component life cycle or time of ending our component
+componentWillUnmount(){
+    // clear timer
+    clearInterval(this.timer)
+}
+
+// working illustration of componentWillUnmount
+clearTimer =()=>{
+    console.log(this.timer)
+    clearInterval(this.timer)
 }
 
    render(){
@@ -31,10 +49,18 @@ componentDidMount(){
                 <div style={{padding:20}}>{this.state.date.getHours()}</div>
                 <div style={{padding:20}}>{this.state.date.getMinutes()}</div>
                 <div style={{padding:20}}>{this.state.date.getSeconds()}</div>
-                </div></div>
+                <br/>
+                <button style ={{ height:'50%',marginTop:30, fontSize:'auto'}} onClick={this.clearTimer}>Clear Timer</button>
+                
+                </div>
+    
+                </div>
        )
        }
     }
 
 
 export {DigitaCalculator}
+// Why react ?
+// SPA -> single page application
+// PWA -> Progressive web app
