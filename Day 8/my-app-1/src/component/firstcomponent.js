@@ -3,18 +3,20 @@ import {MySecondComponent} from './secondcomponent'
 
 class MyFirstComponent extends Component {
 
-    state={
+    /* state={
         username:""
-     } 
-    // // state
-    // constructor(props){
-    //     super(props)
-    //     this.state = {
-    //         username:""
-    //     }
-    //     //  // This binding is necessary to make `this` work in the callback
-    //     // this.handleChange = this.handleChange.bind(this)
-    // }
+     } */
+    // state
+    constructor(props){
+        super(props)
+        this.state = {
+            username:"",
+            address:"",
+            phone:"",
+        }
+        //  // This binding is necessary to make `this` work in the callback
+        // this.handleChange = this.handleChange.bind(this)
+    }
 
     // to handle change
     // using arrow function to bind this
@@ -25,11 +27,28 @@ class MyFirstComponent extends Component {
         })
     }
 
+    handleChange1= (event)=>{
+        // to set state
+        this.setState({
+            address:event.target.value
+        })
+    }
+    handleChange2= (event)=>{
+        // to set state
+        this.setState({
+            phone:event.target.value
+        })
+    }
+
     render(){
         return(
             <div>
-                <input type="text" onChange={this.handleChange}/><br/>
-                {this.state.username}
+                <input type="text" onChange={this.handleChange} name="username" />
+                <input type="text" onChange={this.handleChange1} address="address"/>
+                <input type="text" onChange={this.handleChange2} phone ="phone"/><br/>
+                UserName: {this.state.username}<br/>
+                address: {this.state.address}<br/>
+                phone: {this.state.phone}<br/>
             </div>
         )
     }
