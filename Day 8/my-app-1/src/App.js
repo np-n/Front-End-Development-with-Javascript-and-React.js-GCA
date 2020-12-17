@@ -8,14 +8,13 @@ import { MyThirdComponent } from './component/thirdcomponent'
 export default class App extends Component {
   render() {
     return(
-      // <div className ="headerName">
-      // <div style ={{background:'#f5f5f5',textAlign:'center',margin:'auto'}}>
-      //   <MyFirstComponent/><hr/>
-      //   <MyThirdComponent my_name= 'npn'/>
-      // </div>
-      // </div>
+      <div className ="headerName">
+      <div style ={{background:'#f5f5f5',textAlign:'center',margin:'auto'}}>
+        <MyFirstComponent/>
+      </div>
+      </div>
 
-      <DigitaCalculator/>
+      // <DigitaCalculator/>
     ) 
   }
 }

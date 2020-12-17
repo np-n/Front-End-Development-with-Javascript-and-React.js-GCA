@@ -18,7 +18,8 @@ componentWillReceiveProps(nextProps,nextContext){
     render(){
         return(
             <div>This is my third component<br/>
-                {this.props.my_name}
+                {this.props.my_name}<br/>
+                <button onClick={this.props.callfrommythirdcomponent}>Call Second component from third component</button>
             </div>)
             
     }

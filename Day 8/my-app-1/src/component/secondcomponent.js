@@ -1,6 +1,11 @@
 import React,{Component} from 'react'
+import { MyThirdComponent } from './thirdcomponent'
 
 class MySecondComponent extends Component {
+
+    callFromMyThirdComponent =() =>{
+        alert('Hello')
+    }
     render(){
         return(
             <div>
@@ -8,6 +13,11 @@ class MySecondComponent extends Component {
                 Username: {this.props.username}<br/>
                 Address : {this.props.address}<br/>
                 Phone :{this.props.phone}
+                <hr/>
+                <MyThirdComponent
+                my_name = "Netra Prasad Neupane"
+                callfrommythirdcomponent = {this.callFromMyThirdComponent}
+                />
                 </div>
         )
     }
