@@ -46,7 +46,12 @@ class MyFirstComponent extends Component {
                 phone ={this.state.phone}
                 />
                 <hr/>
-                <Link to='/calculator'>
+                <Link to={{
+                    pathname: "/calculator",
+                    search: "?sort = name",
+                    hash: "#the-hash"
+
+                }}>
                 <button>Go to Digital Calculator</button>
                 </Link>
             </div>
