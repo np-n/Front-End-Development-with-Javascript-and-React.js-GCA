@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import { Link } from 'react-router-dom';
 import {MySecondComponent} from './secondcomponent'
 
 class MyFirstComponent extends Component {
@@ -44,6 +45,10 @@ class MyFirstComponent extends Component {
                 address = {this.state.address}
                 phone ={this.state.phone}
                 />
+                <hr/>
+                <Link to='/calculator'>
+                <button>Go to Digital Calculator</button>
+                </Link>
             </div>
         )
     }
