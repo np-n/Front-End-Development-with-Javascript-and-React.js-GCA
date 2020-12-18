@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import axios from 'axios'
 import {CovidCard} from './covidCard'
+import {ErrorComponent} from './errorComponent'
 class ApiCall extends Component{
 
     // to store data let create a state
@@ -9,7 +10,9 @@ class ApiCall extends Component{
         this.state ={
             covidData:[],
             // data is not loaded yet
-            loading:true
+            loading:true,
+            // at default no errors happens
+            error:false,
         }
     }
 
@@ -19,7 +22,7 @@ class ApiCall extends Component{
 
     getRemoteData= ()=>{
         let self = this
-        axios.get('http://coronavirus-19-api.herokuapp.com/countries').
+        axios.get('http://coronavirus-19-api.herokuapp.com/countries1').
         then(function(response){
             // console.log(response)
             // console.log(response.data)
@@ -30,13 +33,32 @@ class ApiCall extends Component{
             })
         }).
         catch(function(error){
+            self.setState({
+                // error occurs, set error to true
+                error:true,
+            })
 
         })
+    }
+
+    onRetry=() =>{
+        this.setState({
+            error:false,
+            loading:true,
+        })
+        // After retry call this function to get data
+        this.getRemoteData()
     }
     render(){
         return(
             <div style={{maxWidth:600,margin:'20px auto'}}>
-                {// using ternery operator to check data loading status
+                {// Check for errors first
+                this.state.error ? // error occurs
+                // go to error component
+                <ErrorComponent onRetry ={this.onRetry} />:
+                // do follow if error doesn't happens
+
+                // using ternery operator to check data loading status
                 this.state.loading ?
                 //if true: data is not loaded yet
                 <div>Data is loading...........</div>:
