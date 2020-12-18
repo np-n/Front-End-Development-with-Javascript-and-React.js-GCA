@@ -9,6 +9,7 @@ import{
 
 import {MyFirstComponent} from './component/firstcomponent'
 import {DigitaCalculator} from './component/digitalcalculator'
+import { ApiCall } from './component/apiCall'
 
  class Routes extends Component{
      render(){
@@ -22,6 +23,10 @@ import {DigitaCalculator} from './component/digitalcalculator'
 
                         <Route path="/calculator" exact>
                             <DigitaCalculator/>
+                        </Route>
+
+                        <Route path='/api-call' exact>
+                            <ApiCall/>
                         </Route>
                     </Switch>
                 </Router>
