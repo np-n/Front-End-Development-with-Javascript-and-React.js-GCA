@@ -9,6 +9,8 @@ class ApiCall extends Component{
         super(props)
         this.state ={
             covidData:[],
+            // will be use while searching
+            duplicateCovidData:[],
             // data is not loaded yet
             loading:true,
             // at default no errors happens
@@ -22,12 +24,14 @@ class ApiCall extends Component{
 
     getRemoteData= ()=>{
         let self = this
-        axios.get('http://coronavirus-19-api.herokuapp.com/countries1').
+        axios.get('http://coronavirus-19-api.herokuapp.com/countries').
         then(function(response){
             // console.log(response)
             // console.log(response.data)
             self.setState({
                 covidData: response.data,
+                // will be use for search
+                duplicateCovidData:response.data,
                 //data is already loaded, so it becomes false
                 loading:false
             })
@@ -39,6 +43,20 @@ class ApiCall extends Component{
             })
 
         })
+    }
+
+    handleChange= (event)=> {
+        let data = this.state.covidData.filter(function(val){
+            if(val.country.toLowerCase().indexOf(event.target.value.toLowerCase()) != -1){
+                return val
+            }
+        })
+
+        this.setState({
+            duplicateCovidData:data
+        })
+
+
     }
 
     onRetry=() =>{
@@ -64,8 +82,11 @@ class ApiCall extends Component{
                 <div>Data is loading...........</div>:
                 // if false:- data already loaded
                 <div>
+                    <input type="text" onChange={this.handleChange} 
+                    style={{ width:'80%',marginLeft:'10%',marginBottom:10,align:'center'}}
+                    placeholder='Search by Country'/>
                     {
-                    this.state.covidData.map( (data)=>
+                    this.state.duplicateCovidData.map( (data)=>
                     <CovidCard
                     data = {data}/>
                         )
