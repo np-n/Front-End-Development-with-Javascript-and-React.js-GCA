@@ -14,7 +14,7 @@ import { ApiCall } from './component/apiCall'
  class Routes extends Component{
      render(){
          return(
-            <div className ="headerName">
+            <div>
                 <Router>
                     <Switch>
                         <Route path="/" exact>

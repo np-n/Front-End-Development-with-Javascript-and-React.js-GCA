@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import axios from 'axios'
+import {CovidCard} from './covidCard'
 class ApiCall extends Component{
 
     // to store data let create a state
@@ -34,7 +35,7 @@ class ApiCall extends Component{
     }
     render(){
         return(
-            <div>
+            <div style={{maxWidth:600,margin:'20px auto'}}>
                 {// using ternery operator to check data loading status
                 this.state.loading ?
                 //if true: data is not loaded yet
@@ -43,7 +44,8 @@ class ApiCall extends Component{
                 <div>
                     {
                     this.state.covidData.map( (data)=>
-                    <div>{data.country}</div>
+                    <CovidCard
+                    data = {data}/>
                         )
                     }
                 </div>
