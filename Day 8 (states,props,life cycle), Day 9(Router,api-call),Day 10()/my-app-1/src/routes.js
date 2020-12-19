@@ -7,7 +7,7 @@ import{
     Link
 } from 'react-router-dom'
 
-import {MyFirstComponent} from './component/firstcomponent'
+import MyFirstComponent from './component/firstcomponent'
 import {DigitaCalculator} from './component/digitalcalculator'
 import { ApiCall } from './component/apiCall'
 

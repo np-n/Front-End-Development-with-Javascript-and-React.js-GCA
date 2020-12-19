@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
 import {MySecondComponent} from './secondcomponent'
+import {withRouter} from 'react-router-dom'
 
 class MyFirstComponent extends Component {
 
@@ -31,7 +32,7 @@ class MyFirstComponent extends Component {
 
     render(){
         return(
-            <div>
+            <div className="headerName">
                 <input type="text" onChange={this.handleChange} name="username" />
                 <input type="text" onChange={this.handleChange} name="address"/>
                 <input type="number" onChange={this.handleChange} name ="phone"/><br/>
@@ -52,11 +53,15 @@ class MyFirstComponent extends Component {
                     hash: "#the-hash"
 
                 }}>
-                <button>Go to Digital Calculator</button>
-                </Link>
+                <button>Go to Digital Calculator</button></Link>
+                <button
+                onClick={()=> this.props.history.push('/calculator')}>
+                    change Route Programatically</button>
+
+
             </div>
         )
     }
 }
 
-export {MyFirstComponent}
+export default withRouter(MyFirstComponent)
