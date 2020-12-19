@@ -9,7 +9,9 @@ class DynamicCard extends Component{
     render(){
         return(
             <div>Dynamic Routes<br/>
-            Username : {this.props.match.params.username}<br/>
+            {/* Getting data from routes */}
+            Item : {this.props.match.params.id}<br/>
+            Item Id  f: {this.props.match.params.value}
             </div>
         )
     }

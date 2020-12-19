@@ -11,6 +11,7 @@ import MyFirstComponent from './component/firstcomponent'
 import DigitaCalculator from './component/digitalcalculator'
 import { ApiCall } from './component/apiCall'
 import DynamicCard from './component/dynamicCard'
+import MyFourthComponent from './component/fourthComponent'
 
  class Routes extends Component{
      render(){
@@ -30,7 +31,11 @@ import DynamicCard from './component/dynamicCard'
                             <ApiCall/>
                         </Route>
 
-                        <Route path='/dynamicRoute/:username' exact>
+                        <Route path='/route-programatically' exact>
+                            <MyFourthComponent/>
+                        </Route>
+
+                        <Route path='/dynamicRoute/:id/:value' exact>
                             <DynamicCard/>
                         </Route>
                     </Switch>

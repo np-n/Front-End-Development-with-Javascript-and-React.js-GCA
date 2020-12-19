@@ -1,5 +1,4 @@
 import React,{Component} from 'react'
-import {withRouter} from 'react-router-dom'
 
 class DigitaCalculator extends Component{
     constructor(props){
@@ -47,7 +46,6 @@ clearTimer =()=>{
        return(
 
         <div className ="headerName" style={{position:'relative', height:'150vh'}}>
-            <p>Getting name which is passed from the router : {this.props.location.state.name}</p>
             <div style={{display:'flex',position:'absolute',top:'25%',left:'40%'}}>
                 <div style={{padding:20}}>{this.state.date.getHours()}</div>
                 <div style={{padding:20}}>{this.state.date.getMinutes()}</div>
@@ -63,7 +61,7 @@ clearTimer =()=>{
     }
 
 
-export default withRouter(DigitaCalculator)
+export default DigitaCalculator
 // Why react ?
 // SPA -> single page application
 // PWA -> Progressive web app

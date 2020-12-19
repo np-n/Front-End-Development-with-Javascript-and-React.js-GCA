@@ -57,11 +57,14 @@ class MyFirstComponent extends Component {
                 }}>
                 <button>Go to Digital Calculator</button></Link>
                 <button
-                onClick={()=> this.props.history.push('/calculator',
+                onClick={()=> this.props.history.push('/route-programatically',
                 {name:this.state.username}
                 )}>
                     change Route Programatically</button>
-
+                <button
+                onClick={()=> this.props.history.push('dynamicRoute/book/2343534')}>
+                    Dynamic Route
+                </button>
 
             </div>
         )
