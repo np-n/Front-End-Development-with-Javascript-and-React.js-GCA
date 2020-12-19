@@ -8,7 +8,7 @@ import{
 } from 'react-router-dom'
 
 import MyFirstComponent from './component/firstcomponent'
-import {DigitaCalculator} from './component/digitalcalculator'
+import DigitaCalculator from './component/digitalcalculator'
 import { ApiCall } from './component/apiCall'
 
  class Routes extends Component{

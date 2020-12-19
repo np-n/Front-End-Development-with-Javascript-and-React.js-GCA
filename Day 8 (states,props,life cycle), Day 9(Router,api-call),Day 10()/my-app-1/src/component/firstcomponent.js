@@ -16,6 +16,8 @@ class MyFirstComponent extends Component {
             address:"",
             phone:"",
         }
+        // looking props
+        console.log(this.props)
         //  // This binding is necessary to make `this` work in the callback
         // this.handleChange = this.handleChange.bind(this)
     }
@@ -55,7 +57,9 @@ class MyFirstComponent extends Component {
                 }}>
                 <button>Go to Digital Calculator</button></Link>
                 <button
-                onClick={()=> this.props.history.push('/calculator')}>
+                onClick={()=> this.props.history.push('/calculator',
+                {name:this.state.username}
+                )}>
                     change Route Programatically</button>
 
 
