@@ -12,6 +12,7 @@ import DigitaCalculator from './component/digitalcalculator'
 import { ApiCall } from './component/apiCall'
 import DynamicCard from './component/dynamicCard'
 import MyFourthComponent from './component/fourthComponent'
+import MaterialUIHome from './materialUi/materialUiHome'
 
  class Routes extends Component{
      render(){
@@ -37,6 +38,10 @@ import MyFourthComponent from './component/fourthComponent'
 
                         <Route path='/dynamicRoute/:id/:value' exact>
                             <DynamicCard/>
+                        </Route>
+
+                        <Route path='/mui' exact>
+                            <MaterialUIHome/>
                         </Route>
                     </Switch>
                 </Router>
