@@ -10,6 +10,7 @@ import{
 import MyFirstComponent from './component/firstcomponent'
 import DigitaCalculator from './component/digitalcalculator'
 import { ApiCall } from './component/apiCall'
+import DynamicCard from './component/dynamicCard'
 
  class Routes extends Component{
      render(){
@@ -27,6 +28,10 @@ import { ApiCall } from './component/apiCall'
 
                         <Route path='/api-call' exact>
                             <ApiCall/>
+                        </Route>
+
+                        <Route path='/dynamicRoute/:username' exact>
+                            <DynamicCard/>
                         </Route>
                     </Switch>
                 </Router>
