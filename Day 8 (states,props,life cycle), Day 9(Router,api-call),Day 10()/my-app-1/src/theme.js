@@ -6,7 +6,7 @@ import { cyan } from '@material-ui/core/colors';
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: purple[500],
+      main: '#4791db',
     },
     secondary: {
       main: green[500],
