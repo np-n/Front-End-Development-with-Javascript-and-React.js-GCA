@@ -6,7 +6,8 @@ import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Icon from '@material-ui/core/Icon';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
-
+import DialogExample from './dialog';
+import MenuExample from './menu';
 
 class MaterialUIHome extends Component{
     render(){
@@ -40,6 +41,9 @@ class MaterialUIHome extends Component{
                 <Button>Two</Button>
                 <Button>Three</Button>
                 </ButtonGroup>
+                <br/>
+                <DialogExample/>
+                <MenuExample/>
                 </div>
             </div>
         )

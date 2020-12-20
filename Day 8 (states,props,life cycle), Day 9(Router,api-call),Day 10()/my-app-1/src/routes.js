@@ -13,6 +13,7 @@ import { ApiCall } from './component/apiCall'
 import DynamicCard from './component/dynamicCard'
 import MyFourthComponent from './component/fourthComponent'
 import MaterialUIHome from './materialUi/materialUiHome'
+import TabExample from './materialUi/tab';
 
  class Routes extends Component{
      render(){
@@ -38,6 +39,10 @@ import MaterialUIHome from './materialUi/materialUiHome'
 
                         <Route path='/dynamicRoute/:id/:value' exact>
                             <DynamicCard/>
+                        </Route>
+
+                        <Route path='/tab' exact>
+                            <TabExample/>
                         </Route>
 
                         <Route path='/mui' exact>
