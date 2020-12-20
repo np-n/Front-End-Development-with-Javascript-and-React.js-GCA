@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import FormExample from './form'
 import Header from './header'
+import GridExample from './grid';
 
 
 class MaterialUIHome extends Component{
@@ -8,8 +9,8 @@ class MaterialUIHome extends Component{
         return(
             <div>
                 <Header/>
-                <div style={{padding:'25px 200px'}}>
-                <FormExample/>
+                <div style={{padding:'25px 20px'}}>
+                <GridExample/>
                 </div>
             </div>
         )
