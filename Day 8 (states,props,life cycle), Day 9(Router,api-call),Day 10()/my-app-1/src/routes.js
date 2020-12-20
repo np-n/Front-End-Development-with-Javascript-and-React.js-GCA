@@ -14,6 +14,7 @@ import DynamicCard from './component/dynamicCard'
 import MyFourthComponent from './component/fourthComponent'
 import MaterialUIHome from './materialUi/materialUiHome'
 import TabExample from './materialUi/tab';
+import WeatherHome from './weatherInfo/weatherHome'
 
  class Routes extends Component{
      render(){
@@ -47,6 +48,10 @@ import TabExample from './materialUi/tab';
 
                         <Route path='/mui' exact>
                             <MaterialUIHome/>
+                        </Route>
+
+                        <Route path='/weather' exact>
+                            <WeatherHome/>
                         </Route>
                     </Switch>
                 </Router>
