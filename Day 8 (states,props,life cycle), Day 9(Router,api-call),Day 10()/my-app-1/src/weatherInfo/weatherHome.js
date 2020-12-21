@@ -3,6 +3,7 @@ import {WeatherApi} from './weatherApi'
 import Header from './header'
 import {CircularProgress} from '@material-ui/core'
 import CurrentWeatherCard from './currentWeatherCard'
+import ErrorComponent from './errorComponent'
 export default class WeatherHome extends Component {
     constructor(props){
         super(props)
@@ -10,6 +11,7 @@ export default class WeatherHome extends Component {
                 city:"pokhara",
                 weatherData:"",
                 isLoading:true,
+                error:false,
             }
         
     }
@@ -29,28 +31,40 @@ export default class WeatherHome extends Component {
             })
             console.log(self.state.weatherData)
         }).catch(function(error){
-            console.log('Error')
-        })
-           
-        
-        
+            // console.log('Error')
+            self.setState({
+                error:true,
+            })
+        })   
 
+    }
+
+    onRetry =()=>{
+        this.setState({
+            error:false,
+            loading:true,
+        })
+        this.getWeatherData()
     }
     render() {
         return (
             <div>
                 <Header/>
                 <div style={{margin:'30px 8%'}}>
-                { this.state.isLoading?
+                    {this.state.error?
+                    <ErrorComponent 
+                    onRetry ={this.onRetry}/>:
+                this.state.isLoading?
                 <div> Loading data...........             <CircularProgress/> 
                         .......wait for a while</div>:
                 <div><CurrentWeatherCard
                     data ={this.state.weatherData}/>
                    </div>
-                 }
-            
+                 
+                }
                 </div> 
             </div>
+                
         )
     }
 }
