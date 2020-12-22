@@ -1,0 +1,53 @@
+body{
+    max-width:700px;
+    margin:auto;
+}
+#heading1{
+    margin-left:30%;
+    font-size:25px;
+}
+#container{
+    width:400px;
+    height:250px;
+    margin:4% 15%;
+    padding:5%;
+    background-color:red;
+}
+#myClock{
+    margin:20% 5%;
+    background:#f5f5f5;
+    border-radius:12px;
+    font: 50px solid black;
+    text-align: center;
+}
+#align-1{
+    margin-left:5%;
+}
+
+#align-2{
+    margin-left:22%;
+}
+#align-3{
+    margin-left:20%;
+    font-size:20px;
+    background: #f5f5f5;
+    border:2px solid red;
+    border-radius:8px;
+}
+
+#align-3:hover{
+    background: yellowgreen;
+    border:2px solid red;
+    border-radius:7px;
+    cursor:pointer;
+}
+#heading2{
+    margin-bottom:10%;
+    margin-left:30%;
+    font-size:25px;
+}
+#align-4{
+    margin-left:5%;
+    font-size:20px;
+    color:white;
+}
