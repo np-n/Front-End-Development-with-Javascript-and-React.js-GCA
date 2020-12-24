@@ -1,6 +1,7 @@
 import React from 'react'
 import FirstHookComponent from './reactHook/firstComponent'
 import ClassExample from './classComponent/classExample'
+import ThirdHookComponent from './reactHook/thirdComponent'
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +19,9 @@ export default function Routes() {
                     </Route>
                     <Route path ='/component' exact>
                         <ClassExample/>
+                    </Route>
+                    <Route path ='/users/profile/:id/:name/' exact>
+                        <ThirdHookComponent/>
                     </Route>
                 </Switch>
             </Router>
