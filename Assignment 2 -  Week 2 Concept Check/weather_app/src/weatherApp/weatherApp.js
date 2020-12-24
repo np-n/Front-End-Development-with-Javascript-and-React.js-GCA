@@ -28,7 +28,8 @@ export default class WeatherApp extends Component {
     }
 
     getWeatherData=()=>{
-        var self = this
+        let self = this
+       
         CallWeatherApi.getCurrentWeatherData(self.state.city).then(function(response){
             // console.log(response.data)
             self.setState({
@@ -50,11 +51,15 @@ export default class WeatherApp extends Component {
         })
     }
     ongetCityName = (cityName)=>{
-        this.setState({
+        let self = this
+        console.log(cityName)
+        self.setState({
             loading:true,
             city:cityName
         })
-        this.getWeatherData()
+        console.log(self.state.loading)
+        console.log(self.state.city)
+        self.getWeatherData()
     }
 
     render() {

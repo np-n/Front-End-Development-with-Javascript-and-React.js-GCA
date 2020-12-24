@@ -16,6 +16,7 @@ export default class Header extends Component {
             [event.target.name]:event.target.value
             
         })
+        // console.log(this.state.cityName)
     }
     render() {
         return (
