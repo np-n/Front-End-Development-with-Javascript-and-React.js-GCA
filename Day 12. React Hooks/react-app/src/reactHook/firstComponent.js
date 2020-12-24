@@ -47,7 +47,7 @@ export default function FirstHookComponent() {
             Enter Id: <input type="text" /><br />
             {/* Passing value to route using url and state */}
             <button
-                onClick={() => history.push('users/profile/00111111/netra',{post:"Manager"})}>
+                onClick={() => history.push('user/profile/00111111/netra',{post:"Manager"})}>
                 Change route by passing value from url</button>
         </div>
     )
