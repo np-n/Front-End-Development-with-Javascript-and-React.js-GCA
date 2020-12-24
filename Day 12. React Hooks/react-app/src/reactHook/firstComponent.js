@@ -1,7 +1,8 @@
 import React from 'react'
 import {useState} from 'react'
+import SecondHookComponent from './secondComponent'
 
-export default function FirstComponent() {
+export default function FirstHookComponent() {
     // setState is replaced by
     // useState() in react hook
     // const [state, setstate] = useState(initialState)
@@ -29,6 +30,9 @@ export default function FirstComponent() {
             <img 
             onClick={()=>handleLight()}
             src={imageUrl}/>
+            <SecondHookComponent
+            imageUrl ={imageUrl}
+            counter = {counter}/>
         </div>
     )
 }

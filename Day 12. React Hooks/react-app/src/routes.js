@@ -1,5 +1,5 @@
 import React from 'react'
-import FirstComponent from './reactHook/firstComponent'
+import FirstHookComponent from './reactHook/firstComponent'
 import ClassExample from './classComponent/classExample'
 import {
   BrowserRouter as Router,
@@ -14,7 +14,7 @@ export default function Routes() {
             <Router>
                 <Switch>
                     <Route path ='/' exact>
-                        <FirstComponent/>
+                        <FirstHookComponent/>
                     </Route>
                     <Route path ='/component' exact>
                         <ClassExample/>
