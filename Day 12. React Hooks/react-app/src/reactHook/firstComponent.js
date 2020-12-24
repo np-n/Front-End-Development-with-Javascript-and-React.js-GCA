@@ -35,12 +35,17 @@ export default function FirstHookComponent() {
             <img 
             onClick={()=>handleLight()}
             src={imageUrl}/>
+            <hr/>
             <SecondHookComponent
             imageUrl ={imageUrl}
             counter = {counter}
             natureImage = {natureImage}/>
-
+            <hr/>
             <button onClick ={()=>history.push('component')}>Change Route</button>
+            <hr/> 
+            Enter name: <input type="text"/><br/>
+            Enter Id: <input type="text"/><br/>
+            <button onClick ={()=>history.push('users/profile/00111111/netra')}>Change route by passing value from url</button>
         </div>
     )
 }
