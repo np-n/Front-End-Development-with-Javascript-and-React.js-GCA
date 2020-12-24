@@ -1,5 +1,6 @@
 import React from 'react'
 import FirstComponent from './reactHook/firstComponent'
+import ClassExample from './classComponent/classExample'
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,9 @@ export default function Routes() {
                 <Switch>
                     <Route path ='/' exact>
                         <FirstComponent/>
+                    </Route>
+                    <Route path ='/component' exact>
+                        <ClassExample/>
                     </Route>
                 </Switch>
             </Router>
