@@ -2,8 +2,12 @@ import React from 'react'
 import {useState} from 'react'
 import SecondHookComponent from './secondComponent'
 import natureImage from '../image/natureImage.jpeg'
+import {useHistory} from 'react-router-dom'
 
 export default function FirstHookComponent() {
+    // initialize useHistory( )
+    let history = useHistory()
+
     // setState is replaced by
     // useState() in react hook
     // const [state, setstate] = useState(initialState)
@@ -35,6 +39,8 @@ export default function FirstHookComponent() {
             imageUrl ={imageUrl}
             counter = {counter}
             natureImage = {natureImage}/>
+
+            <button onClick ={()=>history.push('component')}>Change Route</button>
         </div>
     )
 }
