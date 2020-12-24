@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 import SecondHookComponent from './secondComponent'
+import natureImage from '../image/natureImage.jpeg'
 
 export default function FirstHookComponent() {
     // setState is replaced by
@@ -32,7 +33,8 @@ export default function FirstHookComponent() {
             src={imageUrl}/>
             <SecondHookComponent
             imageUrl ={imageUrl}
-            counter = {counter}/>
+            counter = {counter}
+            natureImage = {natureImage}/>
         </div>
     )
 }

@@ -11,6 +11,9 @@ export default function SecondHookComponent(props) {
         src = {props.imageUrl}/>
         <br/>
         Counter: {props.counter}
+        <br/><br/>
+        I am from local storage<br/>
+        <img style={{width:'20%'}} src={props.natureImage}/>
         </div>
     )
 }
