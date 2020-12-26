@@ -71,7 +71,10 @@ export default function Timer() {
 
         <DialogBox
         openDialog ={openDialog}
-        onCloseDialog = {onCloseDialog}/>
+        onCloseDialog = {onCloseDialog}
+        dialogTitle={<p style={{fontSize:16,fontWeight:600,color:'blue'}}>
+        Your time is out
+        </p>}/>
      
     </div>
   );
