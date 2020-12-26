@@ -4,6 +4,7 @@ import ClassExample from './classComponent/classExample'
 import ThirdHookComponent from './reactHook/thirdComponent'
 import UserProfile from './reactHook/userProfile';
 import UseEffectHook from './reactHook/useEffectHook'
+import Timer from './reactHook/timer'
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,6 +31,9 @@ export default function Routes() {
                     </Route>
                     <Route path ='/useeffect/' exact>
                         <UseEffectHook/>
+                    </Route>
+                    <Route path ='/timer' exact>
+                        <Timer/>
                     </Route>
                 </Switch>
             </Router>
